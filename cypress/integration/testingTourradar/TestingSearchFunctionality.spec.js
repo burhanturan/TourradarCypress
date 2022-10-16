@@ -15,12 +15,15 @@ describe('User should be able to search specific tours and trips', () => {
 
     it('Testing Search Functionality', () => {
 
-        cy.get('.search > .header-top-search__input').type(destination).type('{enter}', { force: true })
-        //cy.get('.search > .header-top-search__input').type('{enter}', { force: true })
+        //Type destination into the search box
+        cy.get('.search > .header-top-search__input').type('Istanbul{enter}', { force: true })
 
-        cy.xpath('//dl[@class="ao-clp-algolia-search__tour-values"]/dd[2]').each(($el)=>{
+        //Asserting that all destinations contain the specific destination
+        cy.xpath('//dl[@class="ao-clp-algolia-search__tour-values"]/dd[2]').each(($el) => {
+
             const text = $el.text()
             expect(text).to.contains(destination)
+
         })
 
     })
