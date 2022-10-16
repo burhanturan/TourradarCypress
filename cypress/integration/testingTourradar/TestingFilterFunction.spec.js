@@ -4,6 +4,7 @@
 
 describe('Users should be able to filter the tours and trips', () => {
 
+    //URL of the web page comes from cypress.json
     beforeEach('', () => {
         cy.visit('/')
     })
@@ -64,7 +65,7 @@ describe('Users should be able to filter the tours and trips', () => {
 
 
         //Assertion of selected filters
-        cy.get('[class="js-serp-parameters__filters-filter serp-parameters__filters-filter cf"]').each(($el,index)=>{
+        cy.get('[class="js-serp-parameters__filters-filter serp-parameters__filters-filter cf"]').each(($el, index) => {
 
             let text = $el.text()
             expect(text).to.contains(selectedFilters[index])

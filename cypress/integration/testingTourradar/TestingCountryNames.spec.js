@@ -7,12 +7,13 @@ var data = require('../../fixtures/CountryNames.json')
 describe('Users should be able to see all countries when they open the destinations window', () => {
 
 
-    beforeEach('Navigate to the WebSite',()=>{
+    beforeEach('Navigate to the WebSite', () => {
 
+        //URL of the web page comes from cypress.json
         cy.visit('/')
 
     })
-    
+
     it('Testing Country Names From Africa', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
@@ -33,7 +34,7 @@ describe('Users should be able to see all countries when they open the destinati
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
 
         cy.get('[data-category-name="Asia"]').click()
-        
+
         cy.get('[data-category="Asia"]').each(($el, index) => {
 
             const text = $el.text()
@@ -58,7 +59,7 @@ describe('Users should be able to see all countries when they open the destinati
 
     })
 
-    it('Testing Country Names From Australia/Oceania', () => { 
+    it('Testing Country Names From Australia/Oceania', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
 
