@@ -72,11 +72,10 @@ describe('User should be able to save tours and trips inside Wishlist Page and d
         cy.get('[class="sbtn cpr  active "]').should('have.length', 0)
 
         //Hover over My Account icon
-        //cy.get('[class="initials"]').trigger('mouseover').click()
-        cy.get('[class="initials"]').invoke('show').click({ force: true })
+        cy.get('[class="initials"]').realHover()
 
         //Click on Log out button
-        cy.contains('Logout').click;
+        cy.get('[class="ao-header-navigation__dropdown-link ao-header-navigation__dropdown-link--with-icon ao-header-navigation__dropdown-link--logout"]').click()
 
         //Assertion of loging out 
         cy.get('[class="js-ao-header-navigation__profile-placeholder ao-header-navigation__profile-placeholder"]').should('be.visible')
