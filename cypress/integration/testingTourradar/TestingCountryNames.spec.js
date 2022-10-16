@@ -2,7 +2,9 @@
 
 var data = require('../../fixtures/CountryNames.json')
 
-describe('Testing country names from regions', () => {
+//  Users should be able to see all countries when they open the destinations window
+
+describe('Users should be able to see all countries when they open the destinations window', () => {
 
 
     beforeEach('Navigate to the WebSite',()=>{
@@ -14,7 +16,11 @@ describe('Testing country names from regions', () => {
     it('Testing Country Names From Africa', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+
+        cy.get('[data-category-name="Africa"]').click()
+
         cy.get('[data-category="Africa"]').each(($el, index) => {
+
             const text = $el.text()
             expect(text).to.contains(data.Africa[index])
 
@@ -25,7 +31,11 @@ describe('Testing country names from regions', () => {
     it('Testing Country Names From Asia', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+
+        cy.get('[data-category-name="Asia"]').click()
+        
         cy.get('[data-category="Asia"]').each(($el, index) => {
+
             const text = $el.text()
             expect(text).to.contains(data.Asia[index])
 
@@ -36,7 +46,11 @@ describe('Testing country names from regions', () => {
     it('Testing Country Names From Europe', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+
+        cy.get('[data-category-name="Europe"]').click()
+
         cy.get('[data-category="Europe"]').each(($el, index) => {
+
             const text = $el.text()
             expect(text).to.contains(data.Europe[index])
 
@@ -44,10 +58,12 @@ describe('Testing country names from regions', () => {
 
     })
 
-    it('Testing Country Names From Australia/Oceania', () => { // denenecek
+    it('Testing Country Names From Australia/Oceania', () => { 
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
-        cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category-name="Australia/Oceania"]').click()
+
+        cy.get('[data-category-name="Australia/Oceania"]').click()
+
         cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category="Australia/Oceania"]').each(($el, index) => {
 
             const text = $el.text()
@@ -60,6 +76,7 @@ describe('Testing country names from regions', () => {
     it('Testing Country Names From North America', () => {
 
         cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+
         cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category="North America"]').each(($el, index) => {
 
             const text = $el.text()
