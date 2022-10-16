@@ -1,6 +1,6 @@
 {
     "baseUrl": "https://www.tourradar.com/d/europe",
-    "defaultComandTimeout": 6000,
+    "defaultComandTimeout": 8000,
     "pageLoadTimeout": 8000,
     "viewportHeight": 1028,
     "viewportWidth": 1920,

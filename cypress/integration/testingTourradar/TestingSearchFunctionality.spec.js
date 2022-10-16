@@ -2,7 +2,7 @@
 
 //User should be able to search specific tours and trips
 
-import { destination } from '../../support/destinationsConstant.js'
+import { destination } from '../../support/tourradarConstants.js'
 
 describe('User should be able to search specific tours and trips', () => {
 

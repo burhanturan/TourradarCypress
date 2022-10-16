@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('Store_The_Tour', () => {
+
+    //cy.xpath('//div[@id="wishlist_popup_102280"]/div[2]//span[2]', { timeout: 10000 }).click()
+    cy.get('.wishlists > ul > li', { timeout: 10000 }).click()
+    //cy.xpath('(//span[@class="icon"])[1]', { timeout: 10000 }).click()
+    cy.get('.content > .but', { timeout: 10000 }).click()
+
+})
