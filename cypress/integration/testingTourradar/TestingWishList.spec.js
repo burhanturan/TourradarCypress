@@ -21,13 +21,16 @@ describe('User should be able to save tours and trips inside Wishlist Page and d
         //Click on Login Button
         cy.xpath('(//a[@data-login-traveller-url="/login"])[1]').click()
 
-        //Entering valid credentials
+        //Entering valid email
         cy.get('#g_email').type(email)
 
+        //Entering valid password
         cy.get('#g_password').type(password)
 
+        //Click on Login Button
         cy.get('.title').click()
 
+        //Assertion of successfull Login
         cy.get('[class="initials"]').should('be.visible')
 
         //Destinations window
@@ -42,6 +45,7 @@ describe('User should be able to save tours and trips inside Wishlist Page and d
             //Click on the heart button one by one
             cy.wrap($el).click()
 
+            // Store_The_Tour_And_Trips() methods comes from Support/Command.js
             cy.Store_The_Tour_And_Trips()
 
         })
@@ -64,6 +68,7 @@ describe('User should be able to save tours and trips inside Wishlist Page and d
             //Click on the heart button on the Tours & Trips image
             cy.wrap($element).scrollIntoView().click()
 
+            // Remove_The_Tour_And_Trips() methods comes from Support/Command.js
             cy.Remove_The_Tour_And_Trips()
 
         })

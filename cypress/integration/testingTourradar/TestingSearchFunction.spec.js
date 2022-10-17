@@ -21,7 +21,10 @@ describe('User should be able to search specific tours and trips', () => {
         //Asserting that all destinations contain the specific destination
         cy.xpath('//dl[@class="ao-clp-algolia-search__tour-values"]/dd[2]', { timeout: 10000 }).each(($el) => {
 
+            //Get text of each element
             const text = $el.text()
+
+            //Assertion for each of element
             expect(text).to.contains(destination)
 
         })

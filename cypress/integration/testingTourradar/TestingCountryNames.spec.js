@@ -6,7 +6,6 @@ var data = require('../../fixtures/CountryNames.json')
 
 describe('Users should be able to see all countries when they open the destinations window', () => {
 
-
     beforeEach('Navigate to the WebSite', () => {
 
         //URL of the web page comes from cypress.json
@@ -16,10 +15,13 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From Africa', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
+        //Click Specific Region's See all button
         cy.get('[data-category-name="Africa"]').click()
 
+        //Assertion for eacy country name from region
         cy.get('[data-category="Africa"]').each(($el, index) => {
 
             const text = $el.text()
@@ -31,10 +33,13 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From Asia', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
+        //Click Specific Region's See all button
         cy.get('[data-category-name="Asia"]').click()
 
+        //Assertion for eacy country name from region
         cy.get('[data-category="Asia"]').each(($el, index) => {
 
             const text = $el.text()
@@ -46,10 +51,13 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From Europe', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
+        //Click Specific Region's See all button
         cy.get('[data-category-name="Europe"]').click()
 
+        //Assertion for eacy country name from region
         cy.get('[data-category="Europe"]').each(($el, index) => {
 
             const text = $el.text()
@@ -61,10 +69,13 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From Australia/Oceania', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
+        //Click Specific Region's See all button
         cy.get('[data-category-name="Australia/Oceania"]').click()
 
+        //Assertion for eacy country name from region
         cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category="Australia/Oceania"]').each(($el, index) => {
 
             const text = $el.text()
@@ -76,7 +87,8 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From North America', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
         cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category="North America"]').each(($el, index) => {
 
@@ -89,10 +101,13 @@ describe('Users should be able to see all countries when they open the destinati
 
     it('Testing Country Names From Latin America', () => {
 
-        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').trigger('mouseover').click()
+        //Hover over on Destioantion button
+        cy.get('[data-type="destinations"] > .ao-header-navigation__item-link').realHover()
 
+        //Click Specific Region's See all button
         cy.get('[class="ao-header-navigation__dropdown-submenu-item"] > [data-category-name="Latin America"]').click()
 
+        //Assertion for eacy country name from region
         cy.get('[data-category="Latin America"]').each(($el, index) => {
 
             const text = $el.text()
