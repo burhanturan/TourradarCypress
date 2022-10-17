@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "test": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar'",
+    "countryNames": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingCountryNames.spec.js'",
+    "filterFunction": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingFilterFunction.spec.js'",
+    "searchFunction": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingSearchFunction.spec.js'",
+    "wishlistPage": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingWishList.spec.js'"
+
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^9.5.1",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
