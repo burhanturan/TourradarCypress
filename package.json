@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
 
-    "test": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar'",
+    "test": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a",
     "countryNames": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingCountryNames.spec.js'",
     "filterFunction": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingFilterFunction.spec.js'",
     "searchFunction": "npx cypress run --record --key 7fb6daf2-0009-4257-b5a2-37fc2b9c314a --spec 'cypress/integration/testingTourradar/TestingSearchFunction.spec.js'",
